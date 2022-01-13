@@ -30,10 +30,10 @@ class LibraryActivities(models.Model):
         ]
     library_activity_id = models.AutoField(primary_key=True)
     activity_type = models.CharField(max_length=200, choices = activities)
-    user_id = models.ForeignKey(Users, on_delete=models.CASCADE)
-    library_book_id = models.ForeignKey('LibraryBooks', on_delete=models.CASCADE)
-    checked_out_at = models.DateTimeField()
-    checked_in_at = models.DateTimeField()
+    user = models.ForeignKey(Users, on_delete=models.CASCADE)
+    library_book = models.ForeignKey('LibraryBooks', on_delete=models.CASCADE)
+    checked_out_at = models.DateTimeField(null=True)
+    checked_in_at = models.DateTimeField(null=True)
     
 class LibraryBooks(models.Model):
     library_book_id = models.AutoField(primary_key=True)

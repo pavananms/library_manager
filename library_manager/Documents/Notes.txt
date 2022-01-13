@@ -1,0 +1,28 @@
+
+1. Important end points:
+ ---------------------
+
+  - /api/v0/createuser
+    Create a user.
+
+  - /api/v0/display_books/<library_id>
+    display all books in a particular library.
+
+  - /api/v0/display_books/<user_id>
+    Display all books issued to a user
+
+
+2. Authentication:
+ ---------------
+  There need to be 3 types of users,
+   - Admins, with access to change db
+   - Librarians, who can add books, add books to libraries etc (housekeeping)
+   - User, who views books in libraries, check out/ check in books
+
+   Main job of Authentication will be to classify 3 types of accounts in the system, with only the required previlages to each user types.
+
+3.Clarfications:
+
+    1. Who will be using the software? Just librarians or Librarians and normal users?
+    2. H
+

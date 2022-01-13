@@ -21,5 +21,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v0/books', views.books, name='books'),
     path('api/v0/library_books', views.library_books, name='library_books'),
+    path('api/v0/library_activities/check_out', views.library_activities_check_out, name='library_activities_check_out'),
+    path('api/v0/library_activities/check_in', views.library_activities_check_in, name='library_activities_check_in'),
+    path('api/v0/library_activities/list_books_for_user/<int:id>',
+         views.library_activities_list_for_user,
+         name='library_activities_list_for_user'),
 
 ]

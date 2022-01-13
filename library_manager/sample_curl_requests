@@ -3,3 +3,13 @@ curl -H "Content-Type: application/json" -H "X-CSRFToken: v6G74q1nX5G5o3MY6aw8tY
 
 ### add book to a library
 curl -H "Content-Type: application/json" -H "X-CSRFToken: v6G74q1nX5G5o3MY6aw8tYJ3CL7H6DEYj1QAJNQHESS21U7UAC59XezQN6jGyA2S" -H "Cookie: csrftoken=v6G74q1nX5G5o3MY6aw8tYJ3CL7H6DEYj1QAJNQHESS21U7UAC59XezQN6jGyA2S" -d "{\"csrfmiddlewaretoken\": \"oWr8xhkrCkHkJKZWYeg8Uyu7hV3f86tEcRBBcE9Lj7ThmBkSsGP9oOkUsgfeA3Ry\",\"library_id\":\"1\",\"book_id\":\"4\"}" http://localhost:8000/library/api/v0/library_books
+
+## check out a book
+curl -H "Content-Type: application/json" -H "X-CSRFToken: v6G74q1nX5G5o3MY6aw8tYJ3CL7H6DEYj1QAJNQHESS21U7UAC59XezQN6jGyA2S" -H "Cookie: csrftoken=v6G74q1nX5G5o3MY6aw8tYJ3CL7H6DEYj1QAJNQHESS21U7UAC59XezQN6jGyA2S" -d "{\"csrfmiddlewaretoken\": \"oWr8xhkrCkHkJKZWYeg8Uyu7hV3f86tEcRBBcE9Lj7ThmBkSsGP9oOkUsgfeA3Ry\",\"activity_type\":\"check_out\",\"user_id\":\"1\",\"library_book_id\":\"4\"}" http://localhost:8000/library/api/v0/library_activities/check_out
+
+## check in a book
+curl -H "Content-Type: application/json" -H "X-CSRFToken: v6G74q1nX5G5o3MY6aw8tYJ3CL7H6DEYj1QAJNQHESS21U7UAC59XezQN6jGyA2S" -H "Cookie: csrftoken=v6G74q1nX5G5o3MY6aw8tYJ3CL7H6DEYj1QAJNQHESS21U7UAC59XezQN6jGyA2S" -d "{\"csrfmiddlewaretoken\": \"oWr8xhkrCkHkJKZWYeg8Uyu7hV3f86tEcRBBcE9Lj7ThmBkSsGP9oOkUsgfeA3Ry\",\"activity_type\":\"check_out\",\"user_id\":\"1\",\"library_book_id\":\"4\"}" http://localhost:8000/library/api/v0/library_activities/check_in
+
+## list books checked in for a user
+
+curl http://localhost:8000/library/api/v0/library_activities/list_books_for_user/1 > err.html
